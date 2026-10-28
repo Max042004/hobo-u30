@@ -1,0 +1,26 @@
+[Unit]
+Description=HOBO U30 dashboard and collector
+After=network.target u30-network.service
+Wants=u30-network.service
+
+[Service]
+Type=simple
+User=hobo-u30
+Group=hobo-u30
+SupplementaryGroups=plugdev u30-network
+WorkingDirectory=/opt/hobo-u30
+ExecStart=/usr/bin/python3 -u /opt/hobo-u30/run_server.py --host 0.0.0.0 --port 8080 --interval 2 --data /var/lib/hobo-u30
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=25
+KillSignal=SIGINT
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/hobo-u30
+UMask=0027
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+[Install]
+WantedBy=multi-user.target

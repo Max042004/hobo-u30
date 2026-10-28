@@ -1,0 +1,24 @@
+[Unit]
+Description=U30 Wi-Fi onboarding and fallback hotspot
+After=NetworkManager.service avahi-daemon.service
+Wants=NetworkManager.service avahi-daemon.service
+
+[Service]
+Type=simple
+User=root
+Group=u30-network
+ExecStart=/usr/bin/python3 -u /usr/local/lib/u30-network/manager.py
+Restart=on-failure
+RestartSec=5
+RuntimeDirectory=u30-network
+RuntimeDirectoryMode=0750
+UMask=0007
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/etc/u30-network /etc/NetworkManager/system-connections /run/u30-network
+Environment=PYTHONDONTWRITEBYTECODE=1
+
+[Install]
+WantedBy=multi-user.target

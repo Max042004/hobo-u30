@@ -1,0 +1,24 @@
+[Unit]
+Description=Cloudflare Tunnel for the U30 dashboard
+Wants=network-online.target
+After=network-online.target hobo-u30-server.service
+ConditionPathExists=/etc/cloudflared/tunnel-token
+
+[Service]
+Type=simple
+DynamicUser=yes
+LoadCredential=tunnel-token:/etc/cloudflared/tunnel-token
+# Router DNS compatibility: EDNS responses omitted IPv4 answers on this LAN.
+Environment=GODEBUG=netedns0=0
+ExecStart=/usr/bin/cloudflared tunnel --no-autoupdate --edge-ip-version 4 --metrics 127.0.0.1:20241 run --token-file %d/tunnel-token
+Restart=always
+RestartSec=5
+TimeoutStopSec=35
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

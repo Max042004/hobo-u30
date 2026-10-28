@@ -1,0 +1,2403 @@
+[
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 50 01 18 8b fd d4 fa",
+    "oser": {
+      "command": 80,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 50 01 18 8b fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 54 06 02 c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd 33 7c",
+    "oser": {
+      "command": 175,
+      "length": 77,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd",
+      "data_hex": "4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00",
+      "ascii_strings": [
+        "J'H",
+        "\"V$",
+        "\"V ",
+        "PAR",
+        "S-LIA-XXXX3",
+        "PAR"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 00 68 25 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 00 68 25 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 bc 00 a8 da fd 39 06",
+    "oser": {
+      "command": 188,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 bc 00 a8 da fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 01 e1 34 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 01 e1 34 fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 bc 0a 00 00 4d 5f fd c6 51",
+    "oser": {
+      "command": 188,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 bc 0a 00 00 4d 5f fd",
+      "data_hex": "0a 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 49 d1 00 fd 6c 78",
+    "oser": {
+      "command": 73,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 49 d1 00 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 b6 a9 0f fd 27 42",
+    "oser": {
+      "command": 182,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 b6 a9 0f fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e f7 0e 3d fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e f7 0e 3d fd",
+      "data_hex": "00 01 1e f7",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 08 00 01 b9 07 c8 ac",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd 08 b0 00 03 bb 08 00 00 1f 84",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e f8 f9 c5 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e f8 f9 c5 fd",
+      "data_hex": "00 01 1e f8",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 66 24 d9 fd 6c 78",
+    "oser": {
+      "command": 102,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 66 24 d9 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 99 02 dc 64 32 ab fd c6 51",
+    "oser": {
+      "command": 153,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 99 02 dc 64 32 ab fd",
+      "data_hex": "02 dc 64",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 00 0a db d0 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 00 0a db d0 fd",
+      "data_hex": "00 00 00 0a",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 13 c5 02 c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d 5d fd bb 99",
+    "oser": {
+      "command": 186,
+      "length": 11,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d fd",
+      "data_hex": "48 4f 42 4f 01 04 01 4f c6 47",
+      "ascii_strings": [
+        "HOBO"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e f8 f9 c5 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e f8 f9 c5 fd",
+      "data_hex": "00 01 1e f8",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 52 83 ae fd 6c 78",
+    "oser": {
+      "command": 82,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 52 83 ae fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 ad fb a1 fd 27 42",
+    "oser": {
+      "command": 173,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 ad fb a1 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 50 01 18 8b fd d4 fa",
+    "oser": {
+      "command": 80,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 50 01 18 8b fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 54 06 02 c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd 33 7c",
+    "oser": {
+      "command": 175,
+      "length": 77,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd",
+      "data_hex": "4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00",
+      "ascii_strings": [
+        "J'H",
+        "\"V$",
+        "\"V ",
+        "PAR",
+        "S-LIA-XXXX3",
+        "PAR"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 00 68 25 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 00 68 25 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 bc 00 a8 da fd 39 06",
+    "oser": {
+      "command": 188,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 bc 00 a8 da fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 01 e1 34 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 01 e1 34 fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 bc 0a 00 00 4d 5f fd c6 51",
+    "oser": {
+      "command": 188,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 bc 0a 00 00 4d 5f fd",
+      "data_hex": "0a 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 49 d1 00 fd 6c 78",
+    "oser": {
+      "command": 73,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 49 d1 00 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 b6 a9 0f fd 27 42",
+    "oser": {
+      "command": 182,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 b6 a9 0f fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e fa eb e6 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fa eb e6 fd",
+      "data_hex": "00 01 1e fa",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 08 00 01 b9 07 c8 ac",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd 08 b0 00 03 bb 08 00 00 1f 84",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e fb 62 f7 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fb 62 f7 fd",
+      "data_hex": "00 01 1e fb",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 66 24 d9 fd 6c 78",
+    "oser": {
+      "command": 102,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 66 24 d9 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 99 02 dc 64 32 ab fd c6 51",
+    "oser": {
+      "command": 153,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 99 02 dc 64 32 ab fd",
+      "data_hex": "02 dc 64",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 00 0a db d0 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 00 0a db d0 fd",
+      "data_hex": "00 00 00 0a",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 13 c5 02 c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d 5d fd bb 99",
+    "oser": {
+      "command": 186,
+      "length": 11,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d fd",
+      "data_hex": "48 4f 42 4f 01 04 01 4f c6 47",
+      "ascii_strings": [
+        "HOBO"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e fb 62 f7 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fb 62 f7 fd",
+      "data_hex": "00 01 1e fb",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 52 83 ae fd 6c 78",
+    "oser": {
+      "command": 82,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 52 83 ae fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 ad fb a1 fd 27 42",
+    "oser": {
+      "command": 173,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 ad fb a1 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 50 01 18 8b fd d4 fa",
+    "oser": {
+      "command": 80,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 50 01 18 8b fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 54 06 02 c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd 33 7c",
+    "oser": {
+      "command": 175,
+      "length": 77,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd",
+      "data_hex": "4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00",
+      "ascii_strings": [
+        "J'H",
+        "\"V$",
+        "\"V ",
+        "PAR",
+        "S-LIA-XXXX3",
+        "PAR"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 00 68 25 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 00 68 25 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 bc 00 a8 da fd 39 06",
+    "oser": {
+      "command": 188,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 bc 00 a8 da fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 01 e1 34 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 01 e1 34 fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 bc 0a 00 00 4d 5f fd c6 51",
+    "oser": {
+      "command": 188,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 bc 0a 00 00 4d 5f fd",
+      "data_hex": "0a 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 49 d1 00 fd 6c 78",
+    "oser": {
+      "command": 73,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 49 d1 00 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 b6 a9 0f fd 27 42",
+    "oser": {
+      "command": 182,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 b6 a9 0f fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0d bf 02 c0 00 05 b4 00 01 1e 7d dd 54 92 fd 76 53",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fd 54 92 fd",
+      "data_hex": "00 01 1e fd",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 08 00 01 b9 07 c8 ac",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd 08 b0 00 03 bb 08 00 00 1f 84",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e fe cf a0 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fe cf a0 fd",
+      "data_hex": "00 01 1e fe",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 66 24 d9 fd 6c 78",
+    "oser": {
+      "command": 102,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 66 24 d9 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 99 02 dc 64 32 ab fd c6 51",
+    "oser": {
+      "command": 153,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 99 02 dc 64 32 ab fd",
+      "data_hex": "02 dc 64",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 00 0a db d0 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 00 0a db d0 fd",
+      "data_hex": "00 00 00 0a",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 13 c5 02 c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d 5d fd bb 99",
+    "oser": {
+      "command": 186,
+      "length": 11,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d fd",
+      "data_hex": "48 4f 42 4f 01 04 01 4f c6 47",
+      "ascii_strings": [
+        "HOBO"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1e fe cf a0 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1e fe cf a0 fd",
+      "data_hex": "00 01 1e fe",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 52 83 ae fd 6c 78",
+    "oser": {
+      "command": 82,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 52 83 ae fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 ad fb a1 fd 27 42",
+    "oser": {
+      "command": 173,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 ad fb a1 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 50 01 18 8b fd d4 fa",
+    "oser": {
+      "command": 80,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 50 01 18 8b fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 54 06 02 c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd 33 7c",
+    "oser": {
+      "command": 175,
+      "length": 77,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd",
+      "data_hex": "4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00",
+      "ascii_strings": [
+        "J'H",
+        "\"V$",
+        "\"V ",
+        "PAR",
+        "S-LIA-XXXX3",
+        "PAR"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 00 68 25 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 00 68 25 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 bc 00 a8 da fd 39 06",
+    "oser": {
+      "command": 188,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 bc 00 a8 da fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 01 e1 34 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 01 e1 34 fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 bc 0a 00 00 4d 5f fd c6 51",
+    "oser": {
+      "command": 188,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 bc 0a 00 00 4d 5f fd",
+      "data_hex": "0a 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 49 d1 00 fd 6c 78",
+    "oser": {
+      "command": 73,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 49 d1 00 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 b6 a9 0f fd 27 42",
+    "oser": {
+      "command": 182,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 b6 a9 0f fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1f 00 e6 a7 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 00 e6 a7 fd",
+      "data_hex": "00 01 1f 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 08 00 01 b9 07 c8 ac",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd 08 b0 00 03 bb 08 00 00 1f 84",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1f 01 6f b6 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 01 6f b6 fd",
+      "data_hex": "00 01 1f 01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 66 24 d9 fd 6c 78",
+    "oser": {
+      "command": 102,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 66 24 d9 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 99 02 dc 64 32 ab fd c6 51",
+    "oser": {
+      "command": 153,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 99 02 dc 64 32 ab fd",
+      "data_hex": "02 dc 64",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 00 0a db d0 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 00 0a db d0 fd",
+      "data_hex": "00 00 00 0a",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 13 c5 02 c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d 5d fd bb 99",
+    "oser": {
+      "command": 186,
+      "length": 11,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d fd",
+      "data_hex": "48 4f 42 4f 01 04 01 4f c6 47",
+      "ascii_strings": [
+        "HOBO"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1f 01 6f b6 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 01 6f b6 fd",
+      "data_hex": "00 01 1f 01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 52 83 ae fd 6c 78",
+    "oser": {
+      "command": 82,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 52 83 ae fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 ad fb a1 fd 27 42",
+    "oser": {
+      "command": 173,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 ad fb a1 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 50 01 18 8b fd d4 fa",
+    "oser": {
+      "command": 80,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 50 01 18 8b fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 54 06 02 c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd 33 7c",
+    "oser": {
+      "command": 175,
+      "length": 77,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 4d af 4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00 23 b3 fd",
+      "data_hex": "4a 27 48 01 04 01 4e 80 72 28 01 00 29 01 01 23 02 22 56 24 02 22 56 20 01 0a 26 01 01 1c 11 50 41 52 00 75 45 00 01 08 00 00 00 00 45 20 00 00 25 08 00 00 00 00 45 1f b0 00 32 0a 53 2d 4c 49 41 2d 58 58 58 58 33 03 50 41 52 00",
+      "ascii_strings": [
+        "J'H",
+        "\"V$",
+        "\"V ",
+        "PAR",
+        "S-LIA-XXXX3",
+        "PAR"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 00 68 25 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 00 68 25 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 bc 00 a8 da fd 39 06",
+    "oser": {
+      "command": 188,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 bc 00 a8 da fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 09 bb 01 c0 00 02 43 01 e1 34 fd d4 fa",
+    "oser": {
+      "command": 67,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 43 01 e1 34 fd",
+      "data_hex": "01",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 bc 0a 00 00 4d 5f fd c6 51",
+    "oser": {
+      "command": 188,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 bc 0a 00 00 4d 5f fd",
+      "data_hex": "0a 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 49 d1 00 fd 6c 78",
+    "oser": {
+      "command": 73,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 49 d1 00 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 b6 a9 0f fd 27 42",
+    "oser": {
+      "command": 182,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 b6 a9 0f fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0d bf 02 c0 00 05 b4 00 01 1f 03 7d 5d 95 fd 3d 50",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 03 7d 95 fd",
+      "data_hex": "00 01 1f 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 08 00 01 b9 07 c8 ac",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd 08 b0 00 03 bb 08 00 00 1f 84",
+    "oser": null
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0d bf 02 c0 00 05 b4 00 01 1f 03 7d 5d 95 fd 3d 50",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 03 7d 95 fd",
+      "data_hex": "00 01 1f 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 66 24 d9 fd 6c 78",
+    "oser": {
+      "command": 102,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 66 24 d9 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 99 02 dc 64 32 ab fd c6 51",
+    "oser": {
+      "command": 153,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 99 02 dc 64 32 ab fd",
+      "data_hex": "02 dc 64",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 00 0a db d0 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 00 0a db d0 fd",
+      "data_hex": "00 00 00 0a",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 13 c5 02 c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d 5d fd bb 99",
+    "oser": {
+      "command": 186,
+      "length": 11,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 0b ba 48 4f 42 4f 01 04 01 4f c6 47 30 7d fd",
+      "data_hex": "48 4f 42 4f 01 04 01 4f c6 47",
+      "ascii_strings": [
+        "HOBO"
+      ]
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4f e7 65 fd 6c 78",
+    "oser": {
+      "command": 79,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4f e7 65 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 09 bb 02 c0 00 02 b0 00 08 73 fd 39 06",
+    "oser": {
+      "command": 176,
+      "length": 2,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 02 b0 00 08 73 fd",
+      "data_hex": "00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 0c be 01 c0 00 05 45 00 00 32 03 08 c8 fd 1d d4",
+    "oser": {
+      "command": 69,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 45 00 00 32 03 08 c8 fd",
+      "data_hex": "00 00 32 03",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0b bd 02 c0 00 04 ba 08 00 00 6f a1 fd c6 51",
+    "oser": {
+      "command": 186,
+      "length": 4,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 04 ba 08 00 00 6f a1 fd",
+      "data_hex": "08 00 00",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 4b c3 23 fd 6c 78",
+    "oser": {
+      "command": 75,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 4b c3 23 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0c be 02 c0 00 05 b4 00 01 1f 04 c2 e1 fd 6b f7",
+    "oser": {
+      "command": 180,
+      "length": 5,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 05 b4 00 01 1f 04 c2 e1 fd",
+      "data_hex": "00 01 1f 04",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 52 83 ae fd 6c 78",
+    "oser": {
+      "command": 82,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 52 83 ae fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 08 ba 02 c0 00 01 ad fb a1 fd 27 42",
+    "oser": {
+      "command": 173,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 ad fb a1 fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd b0 02 00 08 ba 01 c0 00 01 51 18 9c fd 6c 78",
+    "oser": {
+      "command": 81,
+      "length": 1,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 01 51 18 9c fd",
+      "data_hex": "",
+      "ascii_strings": []
+    }
+  },
+  {
+    "ht_hex": "c0 fd 02 b0 00 0a bc 02 c0 00 03 ae 00 02 64 d6 fd 3c a1",
+    "oser": {
+      "command": 174,
+      "length": 3,
+      "crc_ok": true,
+      "length_ok": true,
+      "raw_hex": "c0 00 03 ae 00 02 64 d6 fd",
+      "data_hex": "00 02",
+      "ascii_strings": []
+    }
+  }
+]

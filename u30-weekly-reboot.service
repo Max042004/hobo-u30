@@ -1,0 +1,6 @@
+[Unit]
+Description=Orderly reboot for the U30 Raspberry Pi
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --no-block reboot

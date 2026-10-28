@@ -1,0 +1,10 @@
+[Unit]
+Description=Reboot U30 Pi after each seven-day running period
+
+[Timer]
+OnActiveSec=7d
+AccuracySec=1min
+Unit=u30-weekly-reboot.service
+
+[Install]
+WantedBy=timers.target

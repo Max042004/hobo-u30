@@ -1,0 +1,17 @@
+[Unit]
+Description=DHCP on the private U30 setup Wi-Fi only
+After=NetworkManager.service
+PartOf=u30-network.service
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/dnsmasq --keep-in-foreground --conf-file=/dev/null --interface=wlan0 --except-interface=lo --bind-interfaces --port=0 --dhcp-range=10.42.0.10,10.42.0.100,255.255.255.0,1h --dhcp-option=3 --dhcp-option=6 --dhcp-authoritative --dhcp-leasefile=/var/lib/u30-setup/dnsmasq.leases --user=nobody --group=nogroup --pid-file= --quiet-dhcp
+Restart=on-failure
+RestartSec=3
+StateDirectory=u30-setup
+ExecStartPre=/usr/bin/chown nobody:nogroup /var/lib/u30-setup
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/u30-setup
