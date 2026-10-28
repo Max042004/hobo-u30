@@ -91,6 +91,7 @@ key-mgmt=wpa-psk
 proto=rsn;
 pairwise=ccmp;
 group=ccmp;
+pmf=1
 psk={psk}
 [ipv4]
 method=manual
@@ -213,6 +214,7 @@ def install(args):
         if not existing:
             private_write(CONFIG, json.dumps(config, ensure_ascii=False))
         profile = Path('/etc/NetworkManager/system-connections/u30-setup.nmconnection')
+        hotspot_migrated = False
         if not profile.exists():
             private_write(profile, hotspot_profile(config))
         else:
@@ -222,6 +224,19 @@ def install(args):
             check.read(profile)
             if check.get('connection', 'uuid') != config['ap_uuid']:
                 raise ValueError('Existing setup Wi-Fi profile belongs to another installation')
+            if (check.get('wifi', 'mode', fallback=None) != 'ap' or
+                    check.get('wifi-security', 'key-mgmt', fallback=None) != 'wpa-psk'):
+                raise ValueError('Existing setup Wi-Fi profile is not the expected WPA2 access point')
+            # wpa-psk plus default/optional PMF can advertise SAE on newer NM.
+            # Our derived WPA2 PSK cannot serve as the SAE password. Explicitly
+            # disable PMF to keep the setup AP WPA2-only on Broadcom firmware.
+            if check.get('wifi-security', 'pmf', fallback='0') != '1':
+                import io
+                check.set('wifi-security', 'pmf', '1')
+                contents = io.StringIO()
+                check.write(contents)
+                private_write(profile, contents.getvalue())
+                hotspot_migrated = True
         destination = Path('/usr/local/lib/u30-network')
         destination.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(APP / 'network/manager.py', destination / 'manager.py')
@@ -253,6 +268,15 @@ def install(args):
         run('timedatectl', 'set-timezone', args.timezone)
         run('timedatectl', 'set-ntp', 'true')
         run('nmcli', 'connection', 'load', str(profile))
+        if hotspot_migrated:
+            # Reloading the keyfile does not change an already-active AP.
+            # Apply the fix now only if wlan0 is this AP; preserve a home Wi-Fi
+            # uplink, which must not be disconnected by an installer update.
+            active = subprocess.run(['nmcli', '-g', 'GENERAL.CON-UUID', 'device', 'show', 'wlan0'],
+                                    capture_output=True, text=True)
+            if active.returncode == 0 and active.stdout.strip() == config['ap_uuid']:
+                run('nmcli', '--wait', '20', 'connection', 'up', 'uuid', config['ap_uuid'],
+                    'ifname', 'wlan0', timeout=30)
         run('udevadm', 'control', '--reload-rules')
         run('udevadm', 'trigger', '--subsystem-match=hidraw', '--action=change')
         for device in Path('/sys/bus/usb/devices').glob('*'):

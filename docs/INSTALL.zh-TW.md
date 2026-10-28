@@ -83,6 +83,8 @@ IP 仍由路由器 DHCP 分配，也可用 `hostname -I` 找到 IP，開啟 `htt
 插網路線時會開啟設定熱點。手機連接連線卡上的 SSID，輸入該卡的隨機密碼。
 若手機顯示沒有網際網路，選擇保持連線，再開啟 **http://10.42.0.1:8080/**。
 熱點不提供上網；VPN／行動數據可能使手機將請求走到別的網路。
+設定熱點固定使用 WPA2-Personal／AES，明確停用 PMF，避免部分 Broadcom 無線韌體在 WPA3／SAE 驗證時失敗。
+v1.0.1 起新安裝及更新都會套用此設定；更新保留原熱點名稱、密碼與家用 Wi-Fi 設定。
 
 ### 家用 Wi-Fi
 
@@ -147,6 +149,8 @@ systemctl list-timers u30-weekly-reboot.timer --no-pager
 
 - **clone 顯示找不到 repo／需要登入**：repo 為 private，先完成 GitHub CLI 或 SSH 金鑰登入，或改用 ZIP。
 - **服務正常但 USB 未連接**：檢查 USB 線、U30 電池，等待採集間隔或按「重新讀取」。可重插 USB；避免同時執行另一個 HID 診斷程式。
+- **熱點看得到但手機密碼正確仍無法加入**：先更新至 v1.0.1 或更新版本並重跑安裝器，手機忘記該網路後重連。若核心日誌出現 `brcmf_cyw_external_auth: External authentication failed`，可能是 WPA3／SAE 相容性問題；此版本將設定熱點固定為 WPA2。
+- **重啟後完全沒有 wlan0**：查看 `journalctl -k -b`。若出現 `Downloaded RAM image is corrupted`，表示 Wi-Fi 晶片韌體載入後校驗失敗，需先處理系統驅動／韌體或硬體初始化；這與熱點密碼驗證是不同階段。
 - **偵測不到新插入的感測器**：U30 記錄中會忽略新增感測器，先在網頁暫停再接上。
 - **CO₂ 顯示接近 0 mA**：軟體辨識到的是電流轉接器；請核對 CO₂ 本體供電、接線與型號，不能把標籤直接當作 ppm。
 - **時鐘未同步**：檢查外網與 `timedatectl status`；3B 無備援 RTC，沒有正確時間時不應重新部署 U30。

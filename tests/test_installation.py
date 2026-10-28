@@ -48,6 +48,7 @@ def test_profile_has_private_ap_network_without_plaintext_password():
     assert config['setup_key'] not in profile
     assert '10.42.0.1/24' in profile and 'never-default=true' in profile
     assert 'mode=ap' in profile and 'autoconnect=false' in profile
+    assert 'pmf=1\n' in profile
 
 
 @pytest.fixture
@@ -121,6 +122,46 @@ def test_dry_run_does_not_create_data_or_credentials(fake_pi):
     assert not (root / 'opt/hobo-u30').exists()
     assert not (root / 'etc/u30-network/config.json').exists()
     assert not any('apt-get' in call for call in calls)
+
+
+@pytest.mark.parametrize('old_pmf', [None, '0', '2', '3'])
+@pytest.mark.parametrize('active_setup_ap', [True, False])
+def test_update_makes_legacy_hotspot_wpa2_only_without_resetting_credentials(fake_pi, monkeypatch, old_pmf, active_setup_ap):
+    import configparser
+    root, args, calls = fake_pi
+    installer.install(args)
+    config_path = root / 'etc/u30-network/config.json'
+    profile_path = root / 'etc/NetworkManager/system-connections/u30-setup.nmconnection'
+    card_path = root / 'etc/u30-network/connection.txt'
+    card_before = card_path.read_bytes()
+    config = json.loads(config_path.read_text())
+    config.update(setup_key='changed-customer-key', home_uuid='saved-home-network')
+    config_path.write_text(json.dumps(config))
+    legacy = installer.hotspot_profile(config).replace('pmf=1\n', '' if old_pmf is None else f'pmf={old_pmf}\n')
+    profile_path.write_text(legacy)
+    before = configparser.ConfigParser(interpolation=None)
+    before.read_string(legacy)
+    previous_run = installer.subprocess.run
+    def active_connection(args, **kwargs):
+        if args == ['nmcli', '-g', 'GENERAL.CON-UUID', 'device', 'show', 'wlan0']:
+            calls.append(args)
+            return SimpleNamespace(returncode=0, stdout=config['ap_uuid'] if active_setup_ap else 'customer-home-uplink')
+        return previous_run(args, **kwargs)
+    monkeypatch.setattr(installer.subprocess, 'run', active_connection)
+
+    installer.install(args)
+
+    after = configparser.ConfigParser(interpolation=None)
+    after.read(profile_path)
+    assert after.get('wifi-security', 'pmf') == '1'
+    for section in before.sections():
+        for key, value in before.items(section):
+            if (section, key) != ('wifi-security', 'pmf'):
+                assert after.get(section, key) == value
+    assert json.loads(config_path.read_text()) == config
+    assert card_path.read_bytes() == card_before
+    reconnect = ('nmcli', '--wait', '20', 'connection', 'up', 'uuid', config['ap_uuid'], 'ifname', 'wlan0')
+    assert (reconnect in calls) == active_setup_ap
 
 
 def test_legacy_deployment_is_rejected_before_modifying_it(fake_pi):
