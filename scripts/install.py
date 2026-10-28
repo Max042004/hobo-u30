@@ -141,6 +141,9 @@ def preflight():
         raise ValueError('An older custom deployment exists. Use the new Pi; this installer will not overwrite that installation.')
     if (CONFIG.parent / 'password-change.json').exists():
         raise ValueError('Finish/recover the pending password update before installing')
+    for path in (APP, DATA, DATA / 'station.sqlite3', DATA / 'station.sqlite3-wal', DATA / 'station.sqlite3-shm'):
+        if path.is_symlink():
+            raise ValueError('Installation/data paths must not be symbolic links: ' + str(path))
 
 
 def wait_health():
@@ -200,6 +203,8 @@ def install(args):
         DATA.chmod(0o750)
         initialize_data(DATA, APP)
         for path in [DATA, *DATA.rglob('*')]:
+            if path.is_symlink():
+                continue
             os.chown(path, account.pw_uid, account.pw_gid)
             if path.is_file() and path.suffix != '.part':
                 path.chmod(0o640)

@@ -133,6 +133,15 @@ def test_legacy_deployment_is_rejected_before_modifying_it(fake_pi):
     assert not (root / 'var/lib/hobo-u30').exists()
 
 
+def test_install_never_follows_a_replaced_data_directory(fake_pi, monkeypatch):
+    root, args, calls = fake_pi
+    original = type(installer.DATA).is_symlink
+    monkeypatch.setattr(type(installer.DATA), 'is_symlink', lambda path: path == installer.DATA or original(path))
+    with pytest.raises(ValueError, match='symbolic links'):
+        installer.install(args)
+    assert not any('apt-get' in call for call in calls)
+
+
 def test_cloudflare_token_accepts_own_tunnel_and_rejects_uuid_or_full_command():
     import base64
     import uuid
