@@ -23,6 +23,10 @@ LOG = logging.getLogger("u30-network")
 CONFIG = Path("/etc/u30-network/config.json")
 SOCKET = "/run/u30-network/control.sock"
 PROFILES = Path("/etc/NetworkManager/system-connections")
+UPDATE_UNIT = "u30-software-update.service"
+UPDATE_ACTIVE = {"queued", "checking", "installing", "rebooting"}
+UPDATE_VERSION = Path("/opt/hobo-u30/VERSION")
+BOOT_ID = Path("/proc/sys/kernel/random/boot_id")
 
 
 def command(*args, timeout=15):
@@ -123,7 +127,7 @@ class Manager:
         if data.get('confirmed') is not True:
             return {'error': '請確認同步變更 Pi 設定與熱點密碼'}, 400
         with self.lock:
-            if self.busy:
+            if self.busy or self.software_status()['busy']:
                 return {'error': '正在更新網路或密碼，請稍後再試'}, 409
             self.busy = True
             self.state['job'] = {'kind': 'password', 'state': 'changing_password',
@@ -204,7 +208,59 @@ class Manager:
 
     def status(self):
         with self.lock:
-            return {**json.loads(json.dumps(self.state)), 'busy': self.busy}
+            update = self.software_status()
+            return {**json.loads(json.dumps(self.state)), 'busy': self.busy or update['busy'],
+                    'software_update': update}
+
+    @property
+    def software_state(self):
+        return self.config_path.parent / 'software-update.json'
+
+    def software_status(self):
+        ready = (self.config_path.parent / 'github-release-token').is_file()
+        installed = UPDATE_VERSION.read_text().strip() if UPDATE_VERSION.is_file() else None
+        result = {'available': ready and installed is not None, 'installed': installed, 'busy': False}
+        try:
+            state = json.loads(self.software_state.read_text(encoding='utf-8'))
+        except (FileNotFoundError, ValueError):
+            return result
+        phase = state.get('state')
+        if phase in UPDATE_ACTIVE:
+            same_boot = state.get('boot_id') == BOOT_ID.read_text().strip()
+            if phase == 'rebooting' and not same_boot and state.get('version') == installed:
+                phase = 'success'
+            elif not same_boot:
+                phase = 'failed'
+            elif ((phase == 'rebooting' and time.monotonic() - state.get('reboot_at', 0) < 90)
+                  or (phase == 'queued' and time.monotonic() - state.get('queued_at', 0) < 8)):
+                result['busy'] = True
+            else:
+                unit = command('/usr/bin/systemctl', 'show', '--property=ActiveState', '--value', UPDATE_UNIT, timeout=2)
+                result['busy'] = unit.stdout.strip() in ('activating', 'active', 'reloading')
+                if not result['busy']:
+                    phase = 'failed'
+        return {**result, 'state': phase, 'version': state.get('version'), 'error': state.get('error')}
+
+    def submit_software_update(self, data):
+        if not self.authorized(data):
+            return {'error': 'Pi 設定密碼不正確'}, 403
+        with self.lock:
+            update = self.software_status()
+            if self.busy or update['busy']:
+                return {'error': 'Pi 正在執行其他設定或更新，請稍後再試。'}, 409
+            if not update['available']:
+                return {'error': '請先在 Pi 設定 GitHub 唯讀憑證。'}, 503
+            pending = {'state': 'queued', 'boot_id': BOOT_ID.read_text().strip(), 'queued_at': time.monotonic()}
+            private_write(self.software_state, json.dumps(pending))
+            try:
+                started = command('/usr/bin/systemctl', 'start', '--no-block', UPDATE_UNIT, timeout=2)
+                if started.returncode == 0:
+                    return {'accepted': True}, 202
+            except (OSError, subprocess.TimeoutExpired):
+                LOG.warning('Could not start the software update service')
+            error = '無法啟動 Pi 軟體更新服務。'
+            private_write(self.software_state, json.dumps({'state': 'failed', 'error': error}, ensure_ascii=False))
+            return {'error': error}, 503
 
     def update(self, **values):
         with self.lock:
@@ -218,7 +274,7 @@ class Manager:
         except ValueError as exc:
             return {"error": str(exc)}, 400
         with self.lock:
-            if self.busy:
+            if self.busy or self.software_status()['busy']:
                 return {"error": "正在切換網路，請稍後再試"}, 409
             self.busy = True
             self.state["job"] = {"state": "connecting", "ssid": ssid,
@@ -404,6 +460,8 @@ class Request(socketserver.StreamRequestHandler):
                 result, status = self.server.manager.submit(data)
             elif action == 'password':
                 result, status = self.server.manager.submit_password(data)
+            elif action == 'software_update':
+                result, status = self.server.manager.submit_software_update(data)
             elif action == "authorize_data":
                 ok = self.server.manager.authorized(data)
                 result, status = ({"authorized": True}, 200) if ok else ({"error": "Pi 設定密碼不正確"}, 403)

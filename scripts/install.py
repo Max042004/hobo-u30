@@ -20,6 +20,7 @@ DATA = Path('/var/lib/hobo-u30')
 CONFIG = Path('/etc/u30-network/config.json')
 ACCOUNT = 'hobo-u30'
 NETWORK_GROUP = 'u30-network'
+UPDATE_UNIT = 'u30-software-update.service'
 
 
 def run(*args, **kwargs):
@@ -103,7 +104,7 @@ method=disabled
 
 
 def runtime_copy(source, destination):
-    for name in ('src', 'web', 'vendor', 'network', 'scripts', 'tools', 'docs'):
+    for name in ('src', 'web', 'vendor', 'network', 'scripts', 'tools', 'docs', 'manual'):
         shutil.copytree(source / name, destination / name,
                         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'), dirs_exist_ok=True)
     for name in ('run_server.py', 'install.sh', 'VERSION', 'README.md', 'THIRD_PARTY_NOTICES.md',
@@ -147,16 +148,85 @@ def preflight():
             raise ValueError('Installation/data paths must not be symbolic links: ' + str(path))
 
 
-def wait_health():
+def wait_health(expected_version=None):
     for _ in range(40):
         try:
             with urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2) as response:
-                if json.load(response)['ok']:
-                    return
+                if not json.load(response)['ok']:
+                    continue
+            if expected_version is not None:
+                with urllib.request.urlopen('http://127.0.0.1:8080/api/network', timeout=4) as response:
+                    network = json.load(response)
+                if not network.get('available') or network.get('software_update', {}).get('installed') != expected_version:
+                    time.sleep(1)
+                    continue
+            return
         except (OSError, ValueError):
             pass
         time.sleep(1)
     raise RuntimeError('Dashboard did not become ready. Run: journalctl -u hobo-u30-server -n 60 --no-pager')
+
+
+def software_files():
+    units = Path('/etc/systemd/system')
+    return {
+        'hobo-u30-server.service': units / 'hobo-u30-server.service',
+        'network/u30-network.service': units / 'u30-network.service',
+        'network/u30-setup-dhcp.service': units / 'u30-setup-dhcp.service',
+        'network/' + UPDATE_UNIT: units / UPDATE_UNIT,
+        'network/manager.py': Path('/usr/local/lib/u30-network/manager.py'),
+    }
+
+
+def software_update_only():
+    """Replace installed code and its service definitions, rolling back on failure."""
+    preflight()
+    if not (APP / 'VERSION').is_file() or not CONFIG.is_file():
+        raise ValueError('Software updates require an existing installer-based station')
+    lock_path = Path('/var/lib/u30-update/device.lock')
+    # The web updater must already hold the exclusive USB worker lock.
+    import fcntl
+    with lock_path.open('rb') as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_SH | fcntl.LOCK_NB)
+        except BlockingIOError:
+            pass
+        else:
+            raise ValueError('Use the Pi software update service to run update-only mode')
+    stage = APP.with_name('.hobo-u30-stage-' + uuid.uuid4().hex[:10])
+    previous = APP.with_name('hobo-u30.previous-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
+    files = software_files()
+    original = {path: path.read_text(encoding='utf-8') if path.exists() else None for path in files.values()}
+    services = ('hobo-u30-server.service', 'u30-network.service')
+    try:
+        runtime_copy(SOURCE, stage)
+        try:
+            run('systemctl', 'stop', *services)
+            APP.rename(previous)
+            stage.rename(APP)
+            for relative, target in files.items():
+                private_write(target, (APP / relative).read_text(encoding='utf-8'), 0o644)
+            run('systemctl', 'daemon-reload')
+            run('systemd-analyze', 'verify', *(str(path) for path in files.values() if path.suffix == '.service'))
+            run('systemctl', 'start', *services)
+            wait_health((APP / 'VERSION').read_text().strip())
+        except Exception:
+            subprocess.run(['systemctl', 'stop', *services], check=False)
+            if previous.exists():
+                if APP.exists():
+                    APP.rename(stage)
+                previous.rename(APP)
+            for path, contents in original.items():
+                if contents is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    private_write(path, contents, 0o644)
+            run('systemctl', 'daemon-reload')
+            run('systemctl', 'start', *services)
+            raise
+    finally:
+        if stage.exists():
+            shutil.rmtree(stage)
 
 
 def install(args):
@@ -241,9 +311,14 @@ def install(args):
         destination.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(APP / 'network/manager.py', destination / 'manager.py')
         (destination / 'manager.py').chmod(0o644)
+        update_lock = Path('/var/lib/u30-update/device.lock')
+        update_lock.parent.mkdir(parents=True, exist_ok=True)
+        update_lock.touch(exist_ok=True)
+        update_lock.chmod(0o644)
         for source, target in ((SOURCE / 'hobo-u30-server.service', '/etc/systemd/system/hobo-u30-server.service'),
                                (SOURCE / 'network/u30-network.service', '/etc/systemd/system/u30-network.service'),
                                (SOURCE / 'network/u30-setup-dhcp.service', '/etc/systemd/system/u30-setup-dhcp.service'),
+                               (SOURCE / 'network' / UPDATE_UNIT, '/etc/systemd/system/' + UPDATE_UNIT),
                                (SOURCE / 'u30-weekly-reboot.service', '/etc/systemd/system/u30-weekly-reboot.service'),
                                (SOURCE / 'u30-weekly-reboot.timer', '/etc/systemd/system/u30-weekly-reboot.timer'),
                                (SOURCE / '99-hobo-u30.rules', '/etc/udev/rules.d/99-hobo-u30.rules')):
@@ -288,7 +363,8 @@ def install(args):
                 pass
         run('systemctl', 'daemon-reload')
         run('systemd-analyze', 'verify', '/etc/systemd/system/hobo-u30-server.service',
-            '/etc/systemd/system/u30-network.service', '/etc/systemd/system/u30-weekly-reboot.timer')
+            '/etc/systemd/system/u30-network.service', '/etc/systemd/system/u30-weekly-reboot.timer',
+            '/etc/systemd/system/' + UPDATE_UNIT)
         run('systemctl', 'restart', 'avahi-daemon')
         run('systemctl', 'enable', '--now', 'u30-network.service', 'hobo-u30-server.service')
         if args.no_weekly_reboot:
@@ -318,9 +394,13 @@ def main():
     parser.add_argument('--no-weekly-reboot', action='store_true')
     parser.add_argument('--skip-packages', action='store_true', help='Use only after dependencies are installed')
     parser.add_argument('--dry-run', action='store_true', help='Preflight and show paths; do not modify the Pi')
+    parser.add_argument('--update-only', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
     try:
-        install(args)
+        if args.update_only:
+            software_update_only()
+        else:
+            install(args)
     except (OSError, ValueError, RuntimeError, subprocess.CalledProcessError) as exc:
         parser.exit(1, 'Installation failed: ' + str(exc) + '\n')
 

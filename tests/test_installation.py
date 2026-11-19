@@ -75,7 +75,7 @@ def fake_pi(tmp_path, monkeypatch):
         calls.append(args)
         return SimpleNamespace(returncode=0, stdout='')
     monkeypatch.setattr(installer.subprocess, 'run', run)
-    monkeypatch.setattr(installer, 'wait_health', lambda: None)
+    monkeypatch.setattr(installer, 'wait_health', lambda expected_version=None: None)
     for name in ('etc/avahi', 'etc/systemd/system', 'etc/udev/rules.d',
                  'etc/NetworkManager/system-connections', 'sys/class/net/wlan0', 'sys/bus/usb/devices'):
         (tmp_path / name).mkdir(parents=True, exist_ok=True)
@@ -181,6 +181,46 @@ def test_install_never_follows_a_replaced_data_directory(fake_pi, monkeypatch):
     with pytest.raises(ValueError, match='symbolic links'):
         installer.install(args)
     assert not any('apt-get' in call for call in calls)
+
+
+@pytest.mark.parametrize('ready', [True, False])
+def test_web_update_preserves_local_settings_and_restores_code_on_failed_start(fake_pi, monkeypatch, ready):
+    root, args, calls = fake_pi
+    installer.install(args)
+    app = root / 'opt/hobo-u30'
+    config = root / 'etc/u30-network/config.json'
+    profile = root / 'etc/NetworkManager/system-connections/u30-setup.nmconnection'
+    original_config, original_profile = config.read_bytes(), profile.read_bytes()
+    db = root / 'var/lib/hobo-u30/station.sqlite3'
+    original_database = db.read_bytes()
+    (app / 'VERSION').write_text('1.0.1')
+    current_unit = root / 'etc/systemd/system/u30-network.service'
+    current_unit.write_bytes(b'# old network unit\n')
+
+    def locked(*args):
+        raise BlockingIOError()
+
+    def health(expected_version):
+        assert expected_version == (ROOT / 'VERSION').read_text().strip()
+        if not ready:
+            raise RuntimeError('test startup failure')
+
+    monkeypatch.setitem(sys.modules, 'fcntl', SimpleNamespace(flock=locked, LOCK_SH=1, LOCK_NB=4))
+    monkeypatch.setattr(installer, 'wait_health', health)
+    calls.clear()
+    if ready:
+        installer.software_update_only()
+        assert (app / 'VERSION').read_bytes() == (ROOT / 'VERSION').read_bytes()
+        assert current_unit.read_bytes() == (ROOT / 'network/u30-network.service').read_bytes()
+    else:
+        with pytest.raises(RuntimeError, match='test startup failure'):
+            installer.software_update_only()
+        assert (app / 'VERSION').read_text() == '1.0.1'
+        assert current_unit.read_bytes() == b'# old network unit\n'
+        assert calls[-1][:2] == ('systemctl', 'start')
+    assert config.read_bytes() == original_config and profile.read_bytes() == original_profile
+    assert db.read_bytes() == original_database
+    assert not any(call[0] in ('apt-get', 'nmcli', 'timedatectl', 'udevadm') for call in calls)
 
 
 def test_cloudflare_token_accepts_own_tunnel_and_rejects_uuid_or_full_command():

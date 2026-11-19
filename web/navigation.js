@@ -21,6 +21,7 @@
  const deviceTabs=document.createElement('nav');deviceTabs.className='view-tabs';deviceTabs.setAttribute('data-i18n-skip','');views.device.append(deviceTabs);
  for(const [name,section] of [['collection',collection],['backups',backup]]){const node=document.createElement('div');node.dataset.subview=name;node.append(section);views.device.append(node);}
  const networkHeading=network.querySelector('h2');if(networkHeading){const h=document.createElement('h1');h.append(...networkHeading.childNodes);networkHeading.replaceWith(h);}views.settings.append(network);if(details)views.settings.append(details);
+ views.settings.append($('manual-download'));
  const destructive=document.createElement('details');destructive.className='data-safety-details';const destructiveTitle=document.createElement('summary');destructiveTitle.setAttribute('data-i18n-skip','');destructive.append(destructiveTitle);const deleteArea=history.querySelector('.data-management'),trash=$('trash-section');deleteArea.before(destructive);destructive.append(deleteArea,trash);
  let route='overview',lastState=null;
  const labels=()=>({overview:t('Overview','感測站總覽'),analysis:t('Data analysis','資料分析'),device:t('Device management','裝置管理'),settings:t('Connection settings','連線設定')});

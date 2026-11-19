@@ -84,13 +84,18 @@ sudo python3 /opt/hobo-u30/tools/setup_cloudflare.py
 
 ## 維護、更新及測試
 
+「連線設定」最下方可下載使用手冊 PDF。安裝包會附上 [manual 資料夾中的手冊](manual/HOBO_U30_Raspberry_Pi_Manual.pdf)，供感測站直接下載。
+
 ```bash
 systemctl status hobo-u30-server u30-network --no-pager
 journalctl -u hobo-u30-server -n 60 --no-pager
 python3 /opt/hobo-u30/tools/doctor.py --require-device
 ```
 
-更新：在原始下載目錄 `git pull --ff-only`，再執行 `sudo bash install.sh`。
+網頁更新：在「連線設定 → 軟體更新」輸入 Pi 設定密碼，按「檢查並更新」。
+安裝成功後 Pi 會重新啟動。請先完成一次 [網頁更新設定](docs/INSTALL.zh-TW.md#網頁軟體更新)。
+
+手動更新：在原始下載目錄執行 `git pull --ff-only`，再執行 `sudo bash install.sh`。
 現有資料、密碼、Wi-Fi 與自動部署選項保留；服務短暫重啟。先前的程式目錄保留為 `/opt/hobo-u30.previous-*` 供查閱。
 舊版位於特定家目錄的手工部署會被安裝器拒絕覆寫，應先在新 Pi 驗證。
 

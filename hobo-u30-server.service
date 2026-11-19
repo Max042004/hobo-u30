@@ -21,6 +21,7 @@ ProtectHome=true
 ReadWritePaths=/var/lib/hobo-u30
 UMask=0027
 Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=U30_UPDATE_LOCK=/var/lib/u30-update/device.lock
 
 [Install]
 WantedBy=multi-user.target

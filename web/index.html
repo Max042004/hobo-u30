@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174c41"><title>U30 感測站</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/workspace.css"><script src="/i18n.js" defer></script><script src="/app.js" defer></script><script src="/studio.js" defer></script><script src="/native-control.js" defer></script><script src="/password.js" defer></script><script src="/navigation.js" defer></script></head>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#174c41"><title>U30 感測站</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/workspace.css"><script src="/i18n.js" defer></script><script src="/app.js" defer></script><script src="/studio.js" defer></script><script src="/native-control.js" defer></script><script src="/password.js" defer></script><script src="/software-update.js" defer></script><script src="/navigation.js" defer></script></head>
 <body><header><div class="brand"><span class="mark">U30</span><div>感測站<span class="eyebrow">FIELD STATION · RASPBERRY PI</span></div></div><div class="connection"><span id="connection" class="pill">連線檢查中</span><button id="refresh" class="quiet">重新讀取</button></div></header>
 <main><div class="intro"><div><h1 id="station-name">Station Overview</h1><p id="identity" class="muted">正在讀取裝置資訊…</p></div><div class="update"><span class="muted">最近一次成功讀取</span><strong id="last-update">—</strong><small id="cadence">讀取量測頻率中 · 時間以台北顯示</small></div></div>
 <div id="error" class="notice error" hidden></div><div id="notice" class="notice" hidden></div>
@@ -74,7 +74,20 @@
 <p class="muted wide">請使用 8～63 個英文字母、數字或符號。變更後，裝置管理、資料管理與網路設定都使用新密碼；原交付卡不會自動更新。</p>
 <label class="confirm-check wide"><input type="checkbox" id="password-ack" required>我了解設定熱點密碼也會變更，使用熱點時需以新密碼重新連線</label><div class="settings-actions wide"><button type="submit" id="password-submit" disabled>更新密碼</button></div></form>
 <div id="password-notice" class="notice" role="status" data-i18n-skip hidden></div></div>
+<div class="panel network-panel password-panel" id="software-update-panel" data-i18n-skip>
+ <h3 id="software-update-title">軟體更新</h3>
+ <p class="muted" id="software-update-help">從 GitHub 安裝最新正式版本。更新成功後，Raspberry Pi 會自動重新啟動。</p>
+ <p id="software-update-version" class="muted"></p>
+ <form id="software-update-form" class="settings-grid">
+  <label><span id="software-update-label">Pi 設定密碼</span><input id="software-update-key" type="password" autocomplete="off" maxlength="64" required></label>
+  <div class="settings-actions wide"><button id="software-update-submit" type="submit" disabled>檢查並更新</button></div>
+ </form>
+ <p id="software-update-notice" class="notice" role="status" hidden></p>
+</div>
 </section>
 <details class="panel details"><summary>裝置詳細資訊與原始回應</summary><dl id="details"></dl><p class="muted">目前提供查詢、量測與資料下載。未實作的感測器換算或環狀記憶體格式會明確標示，原始備份仍會保留。</p></details>
+<div class="panel network-panel password-panel" id="manual-download">
+ <a class="button quiet" href="/manual/HOBO_U30_Raspberry_Pi_Manual.pdf" download>下載使用手冊 PDF</a>
+</div>
 </main><footer><span>U30 感測站</span><span>資料儲存在此樹莓派 · 內網 / VPN 存取</span></footer><dialog id="native-dialog" aria-labelledby="native-resume-title"><form id="native-resume-confirm"><h2 id="native-resume-title">恢復 U30 記錄</h2><p id="native-resume-summary" data-i18n-skip></p><p class="muted">完整備份期間 Pi 即時讀值暫停，完成後自動恢復；備份或核對失敗時不會清除舊部署。</p><label class="confirm-check"><input id="native-resume-ack" type="checkbox" required>我同意先完整備份，再清除 U30 舊部署並立即恢復記錄</label><div id="native-resume-error" class="notice error" data-i18n-skip hidden></div><div class="dialog-actions"><button type="button" id="native-resume-cancel" class="quiet">取消</button><button type="submit">備份並恢復記錄</button></div></form></dialog>
 </body></html>

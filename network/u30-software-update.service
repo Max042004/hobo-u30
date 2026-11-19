@@ -1,0 +1,12 @@
+[Unit]
+Description=Install the latest HOBO U30 GitHub release
+After=network-online.target
+ConditionPathExists=/etc/u30-network/github-release-token
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I -B /opt/hobo-u30/scripts/update.py
+TimeoutStartSec=15min
+PrivateTmp=true
+ProtectHome=true
+UMask=0077

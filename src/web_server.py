@@ -6,6 +6,7 @@ import io
 import json
 import logging
 import math
+import os
 import signal
 import secrets
 import sqlite3
@@ -28,6 +29,7 @@ from u30_data import parse_memory_header, iter_archive
 
 LOG = logging.getLogger("u30")
 ROOT = Path(__file__).resolve().parents[1]
+MANUAL = ROOT / 'manual' / 'HOBO_U30_Raspberry_Pi_Manual.pdf'
 
 
 class Store(PlotWorkbench, HistoryTools, PiCollection, UnifiedSampling):
@@ -404,70 +406,86 @@ class App(NativeControl):
                 LOG.info("Archive %s: %s rows", path.name, result["rows"])
             except Exception:
                 LOG.exception("Could not import %s", path)
+        update_lock = os.environ.get('U30_UPDATE_LOCK')
         while not self.stop.is_set():
-            with self.lock:
-                self.wake.clear()
-                sync = self.sync_requested
-                stop_readout = self.sync_stop
-                self.sync_requested = False
-                deployment = self.deployment_requested
-                self.deployment_requested = None
-                native = self.native_requested
-                self.native_requested = None
-                refresh = self.refresh_requested
-                self.refresh_requested = False
-                should_query = bool(refresh or sync or deployment or native or time.monotonic() >= self.next_query)
-                if native:
-                    self.state['deployment']['running'] = True
-                if deployment:
-                    self.state["deployment"]["running"]=True
-                    self.state["sync"]["running"]=True
-                if sync:
-                    self.state["sync"]["running"]=True
+            if update_lock:
+                import fcntl
+                with open(update_lock, 'rb') as lock:
+                    try:
+                        fcntl.flock(lock, fcntl.LOCK_SH | fcntl.LOCK_NB)
+                    except BlockingIOError:
+                        self.stop.wait(1)
+                        continue
+                    should_query = self.run_device_cycle()
+            else:
+                should_query = self.run_device_cycle()
             if not should_query:
-                self.wake.wait(max(0, self.next_query-time.monotonic()))
-                continue
-            if deployment:
-                with self.lock:
-                    self.state["deployment"] = {"running": True, "phase": "完整備份與設定驗證中"}
-                    self.state["sync"] = {"running": True, "bytes": 0, "total": 524288}
-                try:
-                    result = apply_deployment(self.store.directory/"backups", deployment["configuration"], deployment["serial"], self.progress,
-                                              deployment["channels"], deployment["current_deployment"], deployment.get("raw_recovery_confirmed", False))
-                    self.activate_sampling(result["configuration"]["interval"], result["serial"], result["archive"]["deployment"])
-                    self.native_success()
-                    self.store.import_archive(self.store.directory/"backups"/result["backup"])
-                    with self.lock:
-                        self.state["deployment"].update(result=result, phase="設定已寫入並核對")
-                except Exception as exc:
-                    LOG.exception("U30 deployment failed")
-                    with self.lock:
-                        self.state["deployment"].update(error=str(exc), phase="未完成；請檢查裝置狀態與備份")
-                finally:
-                    self.reader.invalidate()
-                    with self.lock:
-                        self.state["deployment"]["running"] = False
-                        self.state["sync"]["running"] = False
+                self.wake.wait(max(0, self.next_query - time.monotonic()))
+
+    def run_device_cycle(self):
+        with self.lock:
+            self.wake.clear()
+            sync = self.sync_requested
+            stop_readout = self.sync_stop
+            self.sync_requested = False
+            deployment = self.deployment_requested
+            self.deployment_requested = None
+            native = self.native_requested
+            self.native_requested = None
+            refresh = self.refresh_requested
+            self.refresh_requested = False
+            should_query = bool(refresh or sync or deployment or native or time.monotonic() >= self.next_query)
             if native:
-                self.execute_native(native)
+                self.state['deployment']['running'] = True
+            if deployment:
+                self.state["deployment"]["running"]=True
+                self.state["sync"]["running"]=True
             if sync:
+                self.state["sync"]["running"]=True
+        if not should_query:
+            return False
+        if deployment:
+            with self.lock:
+                self.state["deployment"] = {"running": True, "phase": "完整備份與設定驗證中"}
+                self.state["sync"] = {"running": True, "bytes": 0, "total": 524288}
+            try:
+                result = apply_deployment(self.store.directory/"backups", deployment["configuration"], deployment["serial"], self.progress,
+                                          deployment["channels"], deployment["current_deployment"], deployment.get("raw_recovery_confirmed", False))
+                self.activate_sampling(result["configuration"]["interval"], result["serial"], result["archive"]["deployment"])
+                self.native_success()
+                self.store.import_archive(self.store.directory/"backups"/result["backup"])
                 with self.lock:
-                    self.state["sync"] = {"running": True, "bytes": 0, "total": 524288, "error": None}
-                try:
-                    path, manifest = backup(self.store.directory/"backups", self.progress, stop_logging=stop_readout)
-                    result = self.store.import_archive(path)
-                    with self.lock:
-                        self.state["sync"]["result"] = result
-                    LOG.info("Backup finished: %s", path.name)
-                except Exception as exc:
-                    LOG.exception("Backup failed")
-                    with self.lock:
-                        self.state["sync"]["error"] = str(exc)
-                finally:
-                    self.reader.invalidate()
-                    with self.lock:
-                        self.state["sync"]["running"] = False
-            self.poll_once()
+                    self.state["deployment"].update(result=result, phase="設定已寫入並核對")
+            except Exception as exc:
+                LOG.exception("U30 deployment failed")
+                with self.lock:
+                    self.state["deployment"].update(error=str(exc), phase="未完成；請檢查裝置狀態與備份")
+            finally:
+                self.reader.invalidate()
+                with self.lock:
+                    self.state["deployment"]["running"] = False
+                    self.state["sync"]["running"] = False
+        if native:
+            self.execute_native(native)
+        if sync:
+            with self.lock:
+                self.state["sync"] = {"running": True, "bytes": 0, "total": 524288, "error": None}
+            try:
+                path, manifest = backup(self.store.directory/"backups", self.progress, stop_logging=stop_readout)
+                result = self.store.import_archive(path)
+                with self.lock:
+                    self.state["sync"]["result"] = result
+                LOG.info("Backup finished: %s", path.name)
+            except Exception as exc:
+                LOG.exception("Backup failed")
+                with self.lock:
+                    self.state["sync"]["error"] = str(exc)
+            finally:
+                self.reader.invalidate()
+                with self.lock:
+                    self.state["sync"]["running"] = False
+        self.poll_once()
+        return True
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -496,17 +514,24 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         path, query = parsed.path, parse_qs(parsed.query)
         try:
-            if path in ("/", "/app.js", "/studio.js", "/i18n.js", "/navigation.js", "/native-control.js", "/password.js", "/workspace.css", "/style.css"):
+            if path in ("/", "/app.js", "/studio.js", "/i18n.js", "/navigation.js", "/native-control.js", "/password.js", "/software-update.js", "/workspace.css", "/style.css"):
                 name, mime = {"/": ("index.html", "text/html; charset=utf-8"),
                               "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                               "/studio.js": ("studio.js", "text/javascript; charset=utf-8"),
                               "/navigation.js": ("navigation.js", "text/javascript; charset=utf-8"),
                               "/native-control.js": ("native-control.js", "text/javascript; charset=utf-8"),
                               "/password.js": ("password.js", "text/javascript; charset=utf-8"),
+                              "/software-update.js": ("software-update.js", "text/javascript; charset=utf-8"),
                               "/workspace.css": ("workspace.css", "text/css; charset=utf-8"),
                               "/i18n.js": ("i18n.js", "text/javascript; charset=utf-8"),
                               "/style.css": ("style.css", "text/css; charset=utf-8")}[path]
                 return self.send_bytes((ROOT/"web"/name).read_bytes(), mime)
+            if path == '/manual/HOBO_U30_Raspberry_Pi_Manual.pdf':
+                try:
+                    manual = MANUAL.read_bytes()
+                except FileNotFoundError:
+                    return self.json({'error': '使用手冊目前無法下載。'}, 404)
+                return self.send_bytes(manual, 'application/pdf', filename=MANUAL.name)
             if path == "/health":
                 return self.json({"ok": True, "usb_connected": self.app.status()["usb_connected"]})
             if path == "/api/status":
@@ -574,7 +599,7 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError()
         except ValueError:
             return self.json({"error": "invalid request length"}, 400)
-        if self.path in ("/api/network/connect", "/api/network/password", "/api/data/delete-preview", "/api/data/trash", "/api/data/restore",
+        if self.path in ("/api/network/connect", "/api/network/password", "/api/network/software-update", "/api/data/delete-preview", "/api/data/trash", "/api/data/restore",
                          "/api/collection/settings", "/api/collection/start", "/api/u30/preview", "/api/u30/apply", "/api/readout", "/api/u30/control",
                          '/api/studio/query', '/api/studio/export', '/api/studio/import'):
             if self.headers.get("Content-Type", "").split(";")[0].strip() != "application/json":
@@ -591,6 +616,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.json(result, status)
             if self.path == '/api/network/password':
                 result, status = network_request('password', data)
+                return self.json(result, status)
+            if self.path == '/api/network/software-update':
+                result, status = network_request('software_update', {'setup_key': data.get('setup_key')})
                 return self.json(result, status)
             try:
                 if self.path == "/api/data/delete-preview":

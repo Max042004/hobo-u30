@@ -145,6 +145,27 @@ systemctl list-timers u30-weekly-reboot.timer --no-pager
 更新會短暫重啟服務，U30 原生記錄繼續；Pi 即時讀值可能有短暫空檔。
 舊程式保留於 `/opt/hobo-u30.previous-*`；資料庫不放在程式目錄內。
 
+### 網頁軟體更新
+
+首次請以 v1.0.2 或更新的安裝包執行 `sudo bash install.sh`，將更新服務裝到 Pi。已使用 v1.0.1 新版安裝路徑的站台可用同一方式升級。使用舊家目錄部署的站台請依上面的部署限制處理。
+
+維護人員先為私人倉庫 `Max042004/hobo-u30` 建立 fine-grained GitHub token，只選取此倉庫並授予 **Contents: Read-only**。首次設定時，在 Pi 執行以下指令，將 token 存為檔案的唯一一行。往後輪替時只執行 `sudoedit`。
+
+```bash
+sudo install -o root -g root -m 0600 /dev/null /etc/u30-network/github-release-token
+sudoedit /etc/u30-network/github-release-token
+```
+
+在感測站「連線設定 → 軟體更新」輸入 Pi 設定密碼，再按「檢查並更新」。Pi 需要能連上 GitHub。若有較新的正式版本，系統驗證 ZIP 後安裝，確認服務啟動後自動重開 Pi。重開期間網頁和即時採集會短暫中斷。Pi 重新連線後，畫面會顯示目前版本。已是最新版時只顯示結果。
+
+發布新版本時，請提高 `VERSION`，使用相符的 `v主版.次版.修訂版` 標籤發布正式 GitHub Release，並上傳名為 `hobo-u30-main.zip` 的安裝包。ZIP 須包含一層專案目錄，以及 `VERSION`、`scripts/install.py` 和完整的安裝檔。更新服務使用 GitHub 提供的 SHA-256 驗證此檔案。查看更新日誌可執行 `sudo journalctl -u u30-software-update -n 60 --no-pager`。
+
+以下以 v1.0.3 標籤為例，在專案目錄打包要上傳的 Release 附件。
+
+```bash
+git archive --format=zip --prefix=hobo-u30-main/ --output=hobo-u30-main.zip v1.0.3
+```
+
 ## 常見問題
 
 - **clone 顯示找不到 repo／需要登入**：repo 為 private，先完成 GitHub CLI 或 SSH 金鑰登入，或改用 ZIP。
